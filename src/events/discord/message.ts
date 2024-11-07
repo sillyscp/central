@@ -14,5 +14,6 @@ export default async function (client: Client) {
 
 async function messageEvent(message: Message) {
     if(!message.guild) return;
-    if((message.channelId === "1303715569664790559" || message.channelId === "1304022234796654604") && (!message.attachments.size || !message.content.includes('https://')) && !message.thread) await message.delete()
+    console.log(message.channelId, message.attachments.size, message.content.includes('https://'), message.thread)
+    if((message.channelId === "1304022234796654604" || message.channelId === "1303715569664790559") && (!message.attachments.size || !message.content.includes('https://')) && !message.thread) await message.delete()
 }
