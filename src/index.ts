@@ -7,7 +7,7 @@ dotenv.config();
 
 if (!process.env.TOKEN) throw Error("You need to provide a token");
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMessages] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildMessageReactions, GatewayIntentBits.DirectMessageReactions] });
 
 export const commands = new Map<string, Command>();
 

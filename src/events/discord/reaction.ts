@@ -18,7 +18,7 @@ export default async function (client: Client) {
                 value: `[Jump to message](https://discord.com/channels/${interaction.message.guildId}/${interaction.message.channelId}/${interaction.message.id})`
             }, {
                 name: "Reaction",
-                value: interaction.emoji.toString()
+                value: interaction.emoji.imageURL() || interaction.emoji.name || interaction.emoji.id || interaction.emoji.identifier
             }, {
                 name: "User",
                 value: `<@${users.first()!.id}> (${users.first()!.id})`
