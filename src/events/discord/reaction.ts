@@ -7,6 +7,7 @@ export default async function (client: Client) {
         if(!interaction.count || interaction.count > 1) return;
         const users = await interaction.users.fetch();
         if(users.size > 1) return;
+        if(!users.first()) return;
         if(users.first()!.bot) return;
         const logsChannel = (await new DiscordFetch(interaction.client).channel("1295029840784920628"))! as TextChannel;
         const thread = (await logsChannel.threads.fetch("1295030367572721807"))!;
